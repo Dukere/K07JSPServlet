@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실명확인</title>
+<style>
+    #next{
+        border-color: black;
+        background-color: white;
+    }
+</style>
+<script>
+    function nextCheck(){
+        var jumin1 = document.getElementById("jumin1");
+        var jumin2 = document.getElementById("jumin2");
+        var name = document.getElementById("name");
+        
+        if(jumin1.value==''){
+            alert("주민번호 앞자리를 입력해주세요.");
+            return;
+        }
+        if(jumin1.value.length<6){
+            alert("주민번호 앞자리를 다시 입력해주세요.");
+            return;
+        }
+        if(jumin2.value==''){
+            alert("주민번호 뒷자리를 입력해주세요.");
+            return;
+        }
+        if(jumin2.value.length<7){
+            alert("주민번호 뒷자리를 다시 입력해주세요.");
+            return;
+        }
+        if(name.value==''){
+            alert("이름을 입력해주세요.");
+            return;
+        }
+        location.href='./test02.html'
+    }
+</script>
+</head>
+<body>
+    <br>
+    <br>
+    <table style="margin-left: 30px; border-spacing: 20px;">
+    <tr>
+        <td>주민번호</td>
+        <td>
+            <input type="text" id="jumin1" maxlength="6" >
+            &nbsp; - &nbsp;
+            <input type="text" id = "jumin2" maxlength="7">
+        </td>
+    </tr>
+    <tr>
+        <td>이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;름</td>
+        <td><input type="text" id = "name" style="width:383px;"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="text-align: right;">
+            <br>
+            <br>
+            <input type="button" id="next" 
+                value = "다음" style="width: 175px; height: 40px;" onmouseover="this.style.backgroundColor='#e5e5e5';"
+                    onmouseout="this.style.backgroundColor='white';" onclick="nextCheck()">
+        </td>
+    </tr>
+    </table>
+
+</body>
+</html>

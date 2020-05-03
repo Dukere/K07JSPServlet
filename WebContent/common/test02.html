@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <script>
+        function nextCheck(){
+            var id = document.getElementById("id");
+            var pass = document.getElementById("pass");
+            var email = document.getElementById("email");
+            var sex = document.getElementById("sex");
+            
+            if(id.value==''){
+                alert("아이디를 입력해주세요.");
+                return;
+            }
+            if(pass.value==''){
+                alert("비밀번호를 입력해주세요.");
+                return;
+            }
+            if(email.value==''){
+                alert("이메일을 입력해주세요.");
+                return;
+            }if(email.value.indexOf('@')==(-1) || email.value.indexOf('.')==(-1)){
+                alert("이메일형식이 잘못되었습니다.")
+                return;
+            }
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+    <form name="form" action="./test03.jsp" method="post">
+        <table style="border-spacing: 20px;">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" id="id" name="id" style="width: 250px;"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" id="pass" name="pass" style="width: 250px;"></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="text" id="email" name="email" style="width: 250px;"></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+                    <input type="radio" name="sex" value="남자" checked="checked"><label for="man">남자</label>
+                    <input type="radio" name="sex" value="여자"><label for="woman">여자</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="이 전" style="width: 100px;
+                    border-color: black;background-color: white;"
+                    onmouseover="this.style.backgroundColor='#e5e5e5';"
+                        onmouseout="this.style.backgroundColor='white';" onclick="location.href = './test01.html'">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="확 인" style="width: 100px;
+                    border-color: black;background-color: white;"
+                    onmouseover="this.style.backgroundColor='#e5e5e5';"
+                        onmouseout="this.style.backgroundColor='white';" onclick="nextCheck();">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
